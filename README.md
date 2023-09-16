@@ -11,3 +11,8 @@ Initialization:
 ```bash
 zola init zolexp
 ```
+
+Create templates :
+
+- base.html
+- index.html
