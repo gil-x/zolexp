@@ -5,7 +5,7 @@
 <ul>
   <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->
   {% for page in section.pages %}
-  <li><a href="blog/{{ page.slug | safe }}">{{ page.title }}</a></li>
+  <li><a href="/blog/{{ page.slug | safe }}">{{ page.title }}</a></li>
   {% endfor %}
 </ul>
 #}
@@ -13,16 +13,16 @@
 <ul>
   {% for page in paginator.pages %}
 
-  <li><a href="blog/{{ page.slug | safe }}">{{ page.title }}</a></li>
+  <li><a href="/blog/{{ page.slug | safe }}">{{ page.title }}</a></li>
 
   {% endfor %}
 </ul>
 
 <nav class="pagination">
   {% if paginator.previous %}
-  <a class="previous" href="{{ paginator.previous }}">‹ Previous</a>
+  <a class="previous" href="{{ paginator.previous }}">‹‹ Previous</a>
   {% endif %} {% if paginator.next %}
-  <a class="next" href="{{ paginator.next }}">Next ›</a>
+  <a class="next" href="{{ paginator.next }}">Next ››</a>
   {% endif %}
 </nav>
 
