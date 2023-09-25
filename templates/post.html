@@ -21,5 +21,17 @@
 </ul>
 <div class="content">{{ page.content | safe }}</div>
 
-<p><a href="{{ get_url(path='@/blog/_index.md') }}">‹‹ back to blog</a></p>
+<h2>Translations availables</h2>
+<ul>
+  {% for t in page.translations %} {% if t.lang != lang %}
+  <li><a href="{{ t.permalink }}"> {{ t.lang }} </a></li>
+  {% endif %} {% endfor %}
+</ul>
+
+<p>
+  <a href="{{ get_url(path='@/blog/_index.md', lang=page.lang) }}"
+    >‹‹ back to blog</a
+  >
+</p>
+
 {% endblock content %}

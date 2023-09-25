@@ -11,19 +11,36 @@
     <nav>
       <ul>
         <li>
-          <a class="link" href="/">(home)</a>
+          <a class="link" href="{{ get_url(path='@/_index.md', lang=lang) }}"
+            >(home)</a
+          >
         </li>
         <li>
-          <a class="link" href="/blog">Blog</a>
+          <a
+            class="link"
+            href="{{ get_url(path='@/blog/_index.md', lang=lang) }}"
+            >Blog</a
+          >
         </li>
       </ul>
     </nav>
     <p>This is a part from base.html</p>
 
+    <h2>Links to translations:</h2>
+    <ul>
+      {% for language, v in config.languages %}
+      <li>
+        <a href="{{ get_url(path='@/_index.md', lang=language) }}">
+          {{ language }}</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+
     <main class="main">{% block content %} {% endblock %}</main>
 
     {# tera #}
     <hr />
-    <div class="tera">{{ __tera_context }}</div>
+    <pre data-lang="json" class="tera">{{ __tera_context }}</pre>
   </body>
 </html>

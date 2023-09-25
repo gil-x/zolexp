@@ -7,6 +7,9 @@ compile_sass = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
+default_language = "en"
+generate_feed = true
+
 taxonomies = [
     { name = "size", feed = true},
     { name = "colors", feed = true},
@@ -17,6 +20,30 @@ taxonomies = [
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
 
+[languages.fr]
+generate_feed = true # there will be a feed for French content
+build_search_index = true
+taxonomies = [
+    {name = "taille", feed = true},
+    {name = "couleurs", feed = true},
+]
+
+[languages.it]
+generate_feed = false # there will NOT be a feed for Italian content
+build_search_index = true
+taxonomies = [
+    {name = "formato", feed = true},
+    {name = "colori", feed = true},
+]
+
+[languages.fr.translations]
+summary = "Mon blog"
+
+[languages.it.translations]
+summary = "Il mio blog"
+
+[translations]
+summary = "My blog"
 
 [extra]
 # Put all your custom variables here

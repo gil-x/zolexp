@@ -1,3 +1,17 @@
-{% extends "base.html" %} {% block content %}
-<p>This is from index.html</p>
-{% endblock content %}
+{% extends "base.html" %} {% block content %} {% for page in section.pages %}
+<h1>{{page.title}}</h1>
+{% endfor %}
+
+<p>Language: {{lang}}</p>
+
+{% for t in section.translations %}
+<ul>
+  <li>
+    Translated in {{t.lang|default(value=config.default_language)}}: {{t.title}}
+  </li>
+  <li>
+    <a href="{{t.permalink|safe}}">›› link ({{t.lang}})</a>
+  </li>
+</ul>
+
+{% endfor %} {% endblock content %}
