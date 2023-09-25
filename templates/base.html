@@ -8,6 +8,14 @@
     <title>ZolExp</title>
   </head>
   <body class="body">
+
+    <div class="search-container">
+      <input id="search" type="search" placeholder="🔎 Search the docs">
+
+      <div class="search-results">
+          <div class="search-results__items"></div>
+      </div>
+  </div>
     <nav>
       <ul>
         <li>
@@ -42,5 +50,7 @@
     {# tera #}
     <hr />
     <pre data-lang="json" class="tera">{{ __tera_context }}</pre>
+    <script type="text/javascript" src="{{ get_url(path="elasticlunr.min.js") }}"></script>
+    <script type="text/javascript" src="{{ get_url(path="search.js") }}"></script>
   </body>
 </html>
