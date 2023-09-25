@@ -1,0 +1,4 @@
+{% set image = resize_image(path=path, width=500, height=500, format='webp',
+quality=100) %}
+
+<img src="{{ image.url }}" />
